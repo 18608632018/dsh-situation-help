@@ -1,0 +1,45 @@
+{
+  "name": "@local/situation",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/18608632018/dsh-situation-help"
+  },
+  "type": "module",
+  "description": "Continuous desktop situation sensing: foreground window log, screen OCR, on-demand screenshots, and a global voice hotkey.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "tutor.js",
+    "tutor/desktop.ps1",
+    "tutor/DesktopTutor.cs",
+    "sensor/sense.ps1",
+    "sensor/README.md",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-model-selection",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

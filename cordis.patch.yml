@@ -1,0 +1,22 @@
+# situation — 现场感知（屏幕内容 + 操作日志 + 语音热键）
+#
+# 一个常驻的 Windows 传感器进程（PowerShell 5.1）按变化采样前台窗口、
+# 运行 Windows.Media.Ocr、写 JPEG 帧；Host 半负责 ring buffer、路由、
+# 工具、上下文注入与语音转写。所有 config 都可以在本行覆盖。
+- insert:
+    - id: situation
+      name: '@local/situation'
+      config:
+        intervalMs: 1500
+        frameMaxWidth: 1280
+        jpegQuality: 62
+        ocrScale: 1.6
+        ocr: true
+        clipboard: false
+        idleSkipSeconds: 240
+        frameRetentionMinutes: 45
+        tutorFrameMaxEdge: 1920
+        hotkey: Ctrl+Alt+V
+        autoContext: true
+        autoContextSeconds: 60
+        autoStart: true

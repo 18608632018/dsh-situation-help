@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Situational awareness",
+    "description": "Continuous sensing of the foreground window, screen text and clipboard, a sidebar page with the latest frame and timeline, and a global hotkey that toggles voice input into the composer."
+  }
+}
